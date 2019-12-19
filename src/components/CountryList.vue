@@ -28,6 +28,9 @@ export default {
   },
   methods: {
     handleChange(event){
+      //this emits the data from this vue file (selectedCountry)
+      //but where we listen for this data we can assign it to any varibale name we want
+      //such as selected banana
       eventBus.$emit('country-selected', this.selectedCountry)
     }
   }

@@ -3,7 +3,7 @@
   <h1>countries</h1>
   <div class="main-container">
       <country-list :allCountries="countries"/>
-      <country-detail :country="selectedCountry"/>
+      <country-detail :country="selectedBanana"/>
   </div>
 </div>
 </template>
@@ -17,7 +17,7 @@ export default {
   data(){
     return {
       countries: [],
-      selectedCountry: null
+      selectedBanana: null
     };
 
   },
@@ -26,8 +26,10 @@ export default {
     .then(response => response.json())
     .then(countries => this.countries = countries)
 
+
     eventBus.$on('country-selected', (country)=>{
-      this.selectedCountry = country;
+      debugger;
+      this.selectedBanana = country;
     })
   },
   components:{
